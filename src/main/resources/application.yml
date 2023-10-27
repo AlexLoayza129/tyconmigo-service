@@ -1,0 +1,22 @@
+server:
+    port: 9898
+spring:
+  datasource:
+    url: ${MYSQL:jdbc:mysql://192.168.2.20:3306/trackdb?autoReconnect=true}
+    username: ${MYSQL_USER:pvasquez}
+    password: ${MYSQL_PASSWORD:pvasquez!}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # datasource:
+  #   url: ${MYSQL:jdbc:mysql://localhost:3306/trackdb?autoReconnect=true}
+  #   username: ${MYSQL_USER:root}
+  #   password: ${MYSQL_PASSWORD:}
+  #   driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
